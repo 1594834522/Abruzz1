@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="comments" wx:for="{{comments}}" wx:key="*this" wx:for-item="comment" wx:for-index="index">
+    <view class="comment" data-index="{{index}}" style="left: {{comment.left}}px; top: {{comment.top}}px; font-size: {{comment.likes * 5 + 14}}px" bindtap="likeComment">
+      {{comment.text}}
+    </view>
+  </view>
+  
+  <input class="input" bindinput="onInput" bindconfirm="submitComment" type="text" placeholder="请在这里输入您的留言..." value="{{inputValue}}" />
+</view>
